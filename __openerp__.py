@@ -9,17 +9,14 @@
     'website': '',
     'license': 'AGPL-3',
     'depends': ['stock'],
-    'init_xml': [],
-    'update_xml': ['report.xml'],
+    'data' : ['stock_view.xml','report.xml'],
     'demo_xml': [],
-    'active': False,
     'installable': True,
+    'auto_install': False,
+    'application': True,
     'web':True,
-    'css': [
-    ],
-    'js': [
-    ],
-    'xml': [
-    ],
+    'css': [],
+    'js': [],
+    'xml': [],
 }
 

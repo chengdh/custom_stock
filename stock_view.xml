@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record id="view_move_form" model="ir.ui.view">
+      <field name="name">stock.move.form.new</field>
+      <field name="model">stock.move</field>
+      <field name="inherit_id" ref="stock.view_move_picking_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="/form/group/group/div" position="after" >
+          <field name="price_unit" />
+          <field name="price_subtotal" />
+        </xpath>
+      </field>
+    </record>
+
+    <record id="view_move_picking_tree" model="ir.ui.view">
+      <field name="name">stock.move.tree</field>
+      <field name="model">stock.move</field>
+      <field name="inherit_id" ref="stock.view_move_picking_tree"/>
+      <field name="arch" type="xml">
+        <field name="product_qty" position="after">
+          <field name="price_unit" />
+          <field name="price_subtotal" sum="price_subtotal" />
+        </field>
+      </field>
+    </record>
+  </data>
+</openerp>

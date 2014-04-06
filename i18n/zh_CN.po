@@ -1,0 +1,42 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* custom_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-06 15:15+0000\n"
+"PO-Revision-Date: 2014-04-06 15:15+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: custom_stock
+#: field:stock.picking,amount_total:0
+msgid "Total"
+msgstr "合计"
+
+#. module: custom_stock
+#: view:stock.move:0
+msgid "price_subtotal"
+msgstr "合计"
+
+#. module: custom_stock
+#: model:ir.model,name:custom_stock.model_stock_move
+msgid "Stock Move"
+msgstr "库存调拨"
+
+#. module: custom_stock
+#: field:stock.move,price_subtotal:0
+msgid "Subtotal"
+msgstr "总计"
+
+#. module: custom_stock
+#: model:ir.model,name:custom_stock.model_stock_picking
+msgid "Picking List"
+msgstr "移库单"
+
