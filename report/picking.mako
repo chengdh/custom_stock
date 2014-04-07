@@ -49,9 +49,9 @@
   </tr>
   <tr>
     <td>录入时间:</td>
-    <td>${formatLang(picking.date,date_time = True)}</td>
+    <td>${formatLang(picking.date,date = True)}</td>
     <td>确认时间:</td>
-    <td>${formatLang(picking.date_done,date_time = True) or ''|entity}</td>
+    <td>${formatLang(picking.date_done,date = True) or ''|entity}</td>
   </tr>
 </table>
 <table class='content-table'>
@@ -61,6 +61,8 @@
       <th>物品编码</th>
       <th>单位</th>
       <th>数量</th>
+      <th>单价</th>
+      <th>金额</th>
       <th>源库位</th>
       <th>目标库位</th>
     </tr>
@@ -72,17 +74,26 @@
       <td>${line.product_id.default_code}</td>
       <td>${line.product_uom.name}</td>
       <td>${line.product_qty}</td>
+      <td>${line.price_unit}</td>
+      <td>${line.price_subtotal}</td>
       <td>${line.location_id.name or ''|entity}</td>
       <td>${picking.location_dest_id.name or ''|entity}</td>
     </tr>
     %endfor
+    <tr>
+      <td colspan="6">
+        总计人民币&nbsp;&nbsp;
+        ${to_big_rmb(picking.amount_total)}
+      </td>
+      <td colspan="2">&yen;:${picking.amount_total}</td>
+    </tr>
   </tbody>
   <tfoot>
     <tr>
       <td>制表人:</td>
       <td colspan='3'>${user.name}</td>
       <td>复核人:</td>
-      <td colspan='2'></td>
+      <td colspan='3'></td>
     </tr>
   </tfoot>
 </table>

@@ -19,14 +19,13 @@ class stock_picking(osv.osv):
   _description = "stock picking custom"
 
   def _amount_all(self, cr, uid, ids, field_name, arg, context=None):
-    cur_obj = self.pool.get('res.currency')
     res = {}
     for picking in self.browse(cr, uid, ids, context=context):
       val = 0.0
-      for line in picking.move_line:
+      for line in picking.move_lines:
         val += line.price_subtotal
 
-      res[picking.id]['amount_total'] = val
+      res[picking.id] = val
 
     return res
 
@@ -57,6 +56,10 @@ class stock_move(osv.osv):
   _columns = {
         'price_unit': fields.float('Unit Price', digits_compute= dp.get_precision('Product Price')),
         'price_subtotal': fields.function(_amount_line, string='Subtotal', digits_compute= dp.get_precision('Account')),
+      }
+
+  _defaults = {
+      'price_unit' : 0,
       }
 
  
