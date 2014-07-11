@@ -9,7 +9,7 @@
     'website': '',
     'license': 'AGPL-3',
     'depends': ['stock'],
-    'data' : ['report.xml'],
+    'data' : ['stock_view.xml','report.xml'],
     'demo_xml': [],
     'installable': True,
     'auto_install': False,
